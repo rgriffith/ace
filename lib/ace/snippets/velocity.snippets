@@ -1,0 +1,81 @@
+# macro
+snippet #macro
+	#macro ( ${1:macroName} ${2:\$var1, [\$var2, ...]} )
+		${3:## macro code}
+	#end
+# foreach
+snippet #foreach
+	#foreach ( ${1:\$item} in ${2:\$collection} )
+		${3:## foreach code}
+	#end
+# if
+snippet #if
+	#if ( ${1:true} )
+		${0}
+	#end
+# if ... else
+snippet #ife
+	#if ( ${1:true} )
+		${2}
+	#else
+		${0}
+	#end
+# set
+snippet #set
+	#set ( $${1:var} = ${0} )
+# Some useful tools/methods
+# Element.getChild
+snippet .g
+	.getChild("${1}")
+# $_DateTool.format
+snippet $Dat.f
+	\$_DateTool.format("${1:format}", $${2:date})
+# $_DateTool.getDate
+snippet $Dat.g
+	\$_DateTool.getDate($${1:date})
+# $_EscapeTool.html
+snippet $Esc.h
+	\$_EscapeTool.html($${1:string})
+# $_EscapeTool.javascript
+snippet $Esc.j
+	\$_EscapeTool.javascript($${1:string})
+# $_EscapeTool.xml
+snippet $Esc.x
+	\$_EscapeTool.xml($${1:string})
+# $_MathTool.add
+snippet $Mat.a
+	\$_MathTool.add(${1:num1}, ${2:num2})
+# $_MathTool.ceil
+snippet $Mat.c
+	\$_MathTool.ceil(${1:num})
+# $_MathTool.div
+snippet $Mat.d
+	\$_MathTool.div(${1:num1}, ${2:num2})
+# $_MathTool.floor
+snippet $Mat.f
+	\$_MathTool.floor(${1:num})
+# $_MathTool.mod
+snippet $Mat.mod
+	\$_MathTool.mod(${1:num1}, ${2:num2})
+# $_MathTool.mul
+snippet $Mat.mul
+	\$_MathTool.mul(${1:num1}, ${2:num2})
+# $_MathTool.sub
+snippet $Mat.s
+	\$_MathTool.sub(${1:num1}, ${2:num2})
+# $_SerializerTool.serialize
+snippet $Ser.s
+	\$_SerializerTool.serialize($${1:collection}, ${2:true})
+# $_SortTool.addSortCriterion
+snippet $Sor.sc
+	\$_SortTool.addSortCriterion("${1:selector}", "${2:language}", "${3:text|number|qname}", "${4:ascending|descending}", "${5:lower-first|upper-first}")
+# $_SortTool.sort
+snippet $Sor.s
+	\$_SortTool.addSortCriterion("${1:selector}", "${2:language}", "${3:text|number|qname}", "${4:ascending|descending}", "${5:lower-first|upper-first}")
+	\$_SortTool.sort($${6:collection})
+# $_XPathTool.selectNodes
+snippet $X.sn
+	\$_XPathTool.selectNodes($${1:collection}, "${2}")
+# $_XPathTool.selectSingleNode
+snippet $X.ssn
+	\$_XPathTool.selectSingleNode($${1:collection}, "${2}")
